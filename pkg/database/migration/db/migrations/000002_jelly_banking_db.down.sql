@@ -1,0 +1,8 @@
+BEGIN;
+
+TRUNCATE TABLE "users" CASCADE;
+TRUNCATE TABLE "transaction" CASCADE;
+
+
+
+COMMIT;
