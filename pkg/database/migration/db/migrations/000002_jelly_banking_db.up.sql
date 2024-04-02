@@ -1,5 +1,12 @@
 BEGIN;
 
+INSERT INTO "roles" (
+    "title"
+)
+VALUES
+    ('customer'),
+    ('admin');
+
 INSERT INTO
     "users" (
         "fname" ,
@@ -7,8 +14,9 @@ INSERT INTO
         "account_no",
         "moblie_no" ,
         "email" ,
-        "address" ,
-        "balance" 
+        "password",
+        "role_id",
+        "balance"     
     )
 VALUES
     (
@@ -17,8 +25,10 @@ VALUES
         '00001',
         '0803354568',
         'jelly@tod.com',
-        'kdkk ldfkdfdf; dsfkodfo sdffd',
+        '$2a$10$8KzaNdKIMyOkASCH4QvSKuEMIY7Jc3vcHDuSJvXLii1rvBNgz60a6' ,
+        1,
         2000
+        
     ),
     (
         'Dew',
@@ -26,9 +36,13 @@ VALUES
         '00002',
         '09645684523',
         'dew@tdo.com',
-        ';;fkdo dofkdf kddko dfdf',
+        '$2a$10$3qqNPE.TJpNGYCohjTgw9.v1z0ckovx95AmiEtUXcixGAgfW7.wCi',
+        2,
         1000
+         
     );
+
+
 
 INSERT INTO
     "transaction" (
@@ -53,6 +67,8 @@ VALUES
         500.00,
         '00002'
     );
+
+
 
 
 COMMIT;
